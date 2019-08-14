@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BuildingGeneralizationEsri", "BuildingGeneralizationEsri\BuildingGeneralizationEsri.vcxproj", "{2E28DCF7-3C61-4DBD-92A3-9E2C9FEC3371}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E28DCF7-3C61-4DBD-92A3-9E2C9FEC3371}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2E28DCF7-3C61-4DBD-92A3-9E2C9FEC3371}.Debug|Win32.Build.0 = Debug|Win32
+		{2E28DCF7-3C61-4DBD-92A3-9E2C9FEC3371}.Release|Win32.ActiveCfg = Release|Win32
+		{2E28DCF7-3C61-4DBD-92A3-9E2C9FEC3371}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1ED22852-C0D3-48EF-B168-899D2AE3F435}
+	EndGlobalSection
+EndGlobal

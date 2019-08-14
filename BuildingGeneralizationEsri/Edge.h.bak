@@ -1,0 +1,55 @@
+#ifndef Edge_H
+#define Edge_H
+
+#include <list>
+#include <cmath>
+#include <algorithm>
+#include <stack>
+#include <fstream>
+#include "Point.h"
+
+
+class Edge
+{
+private:
+	int recursion;							//Recursion depth
+	double xt,yt;							//Center of mass of points forming the edge
+
+	std::list <Point> point;					//List of points forming the edge
+	std::list <Point> ::iterator i_point;
+	std::list <Point> intersections;				//List of intersections with the remaining edges
+	std::list <Point> ::iterator i_intersections;
+
+public:
+	Edge();
+	~Edge(){};
+	Edge(const double xt, const double yt);
+	
+	void add(const Point &p){point.push_back(p);};
+	void createFirstEdge(std::list<Point> &pl, const bool orientation);
+	void setXtYt(const double xt_, const double yt_){xt = xt_; yt = yt_;}
+	void setRecursion(const int recursion_){recursion = recursion_;}
+	const int getRecursion(){return recursion;}
+	void setIterator(){i_point = point.begin();}
+	int getOrientation(){return point.front().getOrientation();}
+	double ratio(int orientation);
+	int getSize(){return point.size();}
+	double getXt() {return xt;}
+	double getYt() {return yt;}
+	bool intersection(Point *p1, Point *p2, Point *p3, Point *p4, Point &p_int);
+	void mbr(Point &v1, Point &v2, Point &v3, Point &v4/*, int orientation*/);
+	void splitEdge(std::stack<Edge> &el, Edge &em, int index, /*int posit,*/ int orientation_parent_edge, int &orientation_last_edge, int recursion);
+	bool mbrNearestVertices(Point &v1, Point &v2, Point &v3, Point &v4, int index, int posit, int orientation);		
+	int position(Point *p, Point *p2, Point *p3);
+	void createEdge(Edge &e_new, Point &start, Point &end, int orientation_edge_actual, int index, int posit);
+	int intersectionsSize(){return intersections.size();};
+	void clear(){point.clear();intersections.clear();};
+	void regressionLine(Point &p1, Point &p2, int orientation);
+	void intersectionsRegLine(Point &p1, Point &p2);
+	void processEdgeIntersection(std::stack<Edge>  &el, int orientation_edge);
+	void processEdgeNoIntersection(std::stack<Edge>  &el);
+	void rotate (double angle);
+	void printEdge();
+	};
+
+#endif

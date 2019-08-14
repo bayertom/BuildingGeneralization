@@ -1,0 +1,25 @@
+HKCR
+{
+	BuildingGeneralizationEsri.building_s.1 = s 'building_simplify Class'
+	{
+		CLSID = s '{0B792481-F559-4287-B34D-872A43958126}'
+	}
+	BuildingGeneralizationEsri.building_sim = s 'building_simplify Class'
+	{
+		CLSID = s '{0B792481-F559-4287-B34D-872A43958126}'
+		CurVer = s 'BuildingGeneralizationEsri.building_s.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0B792481-F559-4287-B34D-872A43958126} = s 'building_simplify Class'
+		{
+			ProgID = s 'BuildingGeneralizationEsri.building_s.1'
+			VersionIndependentProgID = s 'BuildingGeneralizationEsri.building_sim'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CECF114F-A958-4D34-A872-0E85B1CA586E}'
+		}
+	}
+}

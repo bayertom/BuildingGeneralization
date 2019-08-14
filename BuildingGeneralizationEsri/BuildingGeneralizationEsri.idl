@@ -1,0 +1,34 @@
+// BuildingGeneralizationEsri.idl : IDL source for BuildingGeneralizationEsri
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (BuildingGeneralizationEsri.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(734CAF16-E975-420F-BD46-EF01E75950A5),
+	helpstring("Ibuilding_simplify Interface"),
+	pointer_default(unique)
+]
+interface Ibuilding_simplify : IUnknown{
+};
+[
+	uuid(CECF114F-A958-4D34-A872-0E85B1CA586E),
+	version(1.0),
+	helpstring("BuildingGeneralizationEsri 1.0 Type Library")
+]
+library BuildingGeneralizationEsriLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(0B792481-F559-4287-B34D-872A43958126),
+		helpstring("building_simplify Class")
+	]
+	coclass building_simplify
+	{
+		[default] interface Ibuilding_simplify;
+	};
+};
